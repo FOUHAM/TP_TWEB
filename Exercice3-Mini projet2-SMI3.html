@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mini projet 02 : Bien apprendre l’API DOM</title>
+</head>
+<body>
+<script>
+	// Creation des deux <div>
+
+var Div1 = document.createElement('div');
+    Div1.id = 'div01_TP03';
+var Div2 = document.createElement('div');
+    Div2.id = 'div02_TP03';
+
+// creation de <h1>
+var h1 = document.createElement('h1');
+var txth1 = document.createTextNode('Technologies du Web');
+    h1.appendChild(txth1);
+
+
+
+var  languages= [
+
+    { t: 'HTML',
+
+      d: 'HTML signifie « HyperText Markup Language » qu\'on peut traduire par « langage de balises pour l\'hypertexte ». Il est utilisé afin de créer et de représenter le contenu d\'une page web et sa structure. D\'autres technologies sont utilisées avec HTML pour décrire la présentation d\'une page (CSS) et/ou ses fonctionnalités interactives (JavaScript).' },
+
+    { t: 'CSS',
+
+      d: 'CSS est l\'un des langages principaux du Web ouvert et a été standardisé par le W3C. Ce standard évolue sous forme de niveaux (levels), CSS1 est désormais considéré comme obsolète, CSS2.1 correspond à la recommandation et CSS3, qui est découpé en modules plus petits, est en voie de standardisation.' },
+
+    { t: 'Javascript',
+
+      d: 'JavaScript (qui est souvent abrégé en « JS ») est un langage de script léger, orienté objet, principalement connu comme le langage de script des pages web. Mais il est aussi utilisé dans de nombreux environnements extérieurs aux navigateurs web tels que Node.js, Apache CouchDB voire Adobe Acrobat. Le code JavaScript est interprété ou compilé à la volée (JIT). C\'est un langage à objets utilisant le concept de prototype, disposant d\'un ty page faible et dynamique qui permet de programmer suivant plusieurs paradigmes de programmation : fonctionnelle, impérative et orientée objet. Apprenezen plus sur JavaScript.' },
+
+    { t: 'DOM',
+
+      d: 'Le Document Object Model ou DOM (pour modèle objet de document) est une interface de programmation pour les documents HTML, XML et SVG. Il fournit une représentation structurée du document sous forme d\'un arbre et définit la façon dont la structure peut être manipulée par les programmes, en termes de style et de contenu.' }
+
+];
+
+var dl = document.createElement('dl'),dt, dt_txt,dd,dd_txt;
+
+for(var i = 0; i < (languages.length); i++)
+{
+	dt = document.createElement('dt');
+	dd = document.createElement('dd');
+	dt_txt = document.createTextNode(languages[i].t);
+	dd_txt = document.createTextNode(languages[i].d);
+	dt.appendChild(dt_txt);
+	dd.appendChild(dd_txt);
+	dl.appendChild(dt);
+	dl.appendChild(dd);
+
+}
+
+// Insertion dans <div>
+
+Div1.appendChild(h1);
+Div2.appendChild(dl);
+
+// Insertion des <div> dans le <body>
+
+document.body.appendChild(Div1);
+document.body.appendChild(Div2);
+</script>
+</body>
+</html>

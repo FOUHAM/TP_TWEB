@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mini projet 02 : Bien apprendre l’API DOM</title>
+</head>
+<body>
+
+
+
+        <!-- Mini projet 02 : Ex4
+             Author: FOUHAM ABDELKRIM, SMI3
+	         Encadré par: Monsieur, ELALLIOUI YOUSSOUF -->
+
+
+
+<script>
+
+// Creation des <div>
+var Div1 = document.createElement('div');
+    Div1.id = 'div01_TP04';
+var Div2 = document.createElement('div');
+    Div2.id = 'div02_TP04';
+
+// creation de <h1>
+var h1 = document.createElement('h1');
+var txth1 = document.createTextNode('Exercice 4 : Formulaire');
+    h1.appendChild(txth1);
+
+// Creation struct form <form>
+var form       = document.createElement('form');
+var fieldset   = document.createElement('fieldset');
+var legend     = document.createElement('legend'),
+legend_Text = document.createTextNode('Uploader une image');
+var Div3 = document.createElement('div');
+
+form.action  = 'upload.php';
+form.enctype = 'multipart/form-data';
+form.method  = 'post';
+
+Div3.setAttribute('style', 'text-align: center');
+
+legend.appendChild(legend_Text);
+
+fieldset.appendChild(legend);
+form.appendChild(fieldset);
+
+// Création des champs
+var label =     document.createElement('label'),
+label_Text = document.createTextNode('Image à uploader :');
+var br =        document.createElement('br');
+var submit =    document.createElement('input');
+
+submit.type  = 'submit';
+submit.value = 'Envoyer';
+
+label.appendChild(label_Text);
+
+Div3.appendChild(label);
+Div3.appendChild(br);
+Div3.appendChild(br.cloneNode(false));
+Div3.appendChild(submit);
+
+fieldset.appendChild(Div3);
+
+
+// Insertion de <h1> et <form> dans les <div>
+Div1.appendChild(h1);
+Div2.appendChild(form);
+
+// Insertion des <div> dns le body
+document.body.appendChild(Div1);
+document.body.appendChild(Div2);
+	</script>
+</body>
+</html>

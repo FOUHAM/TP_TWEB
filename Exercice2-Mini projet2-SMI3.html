@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mini projet 02 : Bien apprendre l’API DOM</title>
+</head>
+<body>
+<script>
+	// Creation des 2 <div>
+var Div1 = document.createElement('div');
+    Div1.id = 'div01_TP02';
+var Div2 = document.createElement('div');
+    Div2.id = 'div02_TP02';
+
+ // Creation des elements <h2> et <p>
+
+var h2 = document.createElement('h2');
+var txth2 = document.createTextNode('Utilisation de DOM en javascript');
+h2.appendChild(txth2);
+ 
+var paragraph = document.createElement('p');
+var txtp =document.createTextNode('Avec le DOM, l\'ajout d\'un élément HTML se fait en quatre temps:');
+paragraph.appendChild(txtp);
+
+// Creation des noeuds textuels
+
+var textNodes = [
+
+    document.createTextNode('La création de l’élément'),
+    document.createTextNode('Lui affecter des attributs'),
+    document.createTextNode('l\'insertion dans le document'),
+    document.createTextNode('et en fin, la création du contenu textuel')
+];
+
+ // boucle for pour l'ajout du text a <li> puis rassembler les elements <li> dans <ul>
+
+var ul = document.createElement('ul'),
+    li;
+
+for (var i = 0; i < (textNodes.length) ; i++) {
+
+       li = document.createElement('li');
+       li.appendChild(textNodes[i]);
+       ul.appendChild(li);
+
+}
+
+// insertion des diff elements dans les deux <div> 
+
+Div1.appendChild(h2);
+Div2.appendChild(paragraph);
+Div2.appendChild(ul);
+
+// insertion des deux <div> dans le <body>
+
+document.body.appendChild(Div1);
+document.body.appendChild(Div2);
+</script>
+</body>
+</html>

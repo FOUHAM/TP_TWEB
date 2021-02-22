@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Mini projet 02 : Bien apprendre l’API DOM</title>
+	</head>
+	<body>
+	<script>	
+// Creation des deux elements div.
+
+var Div1 = document.createElement('div');
+    Div1.id = 'div01_TP01';
+var Div2 = document.createElement('div');
+    Div2.id ='div02_TP01';
+
+ // Creation des Noeuds textuels.
+
+var textNodes = [
+    document.createTextNode('Concernant le W3C'),
+    document.createTextNode('Le '),
+    document.createTextNode('World Wide Web Consortium'),
+    document.createTextNode(', abrégé par le sigle '),
+    document.createTextNode('W3C'),
+    document.createTextNode(', est un '),
+    document.createTextNode('organisme de standardisation'),
+    document.createTextNode(' à but non-lucratif chargé de promouvoir la compatibilité des technologies du '),
+    document.createTextNode('World Wide Web'),
+    document.createTextNode('.') 
+];
+
+// Creation des balises <h1> <strong> et <a>  
+
+var Header = document.createElement('h1');
+Header.appendChild(textNodes[0]);
+
+var Strong1 = document.createElement('strong');
+Strong1.appendChild(textNodes[2]);
+
+var Strong2 = document.createElement('strong');
+Strong2.appendChild(textNodes[4]);
+
+var Link1 = document.createElement('a');
+var Link2 = document.createElement('a');
+
+
+
+Link1.href  = 'http://fr.wikipedia.org/wiki/Organisme_de_normalisation';
+Link1.title = 'Organisme de normalisation';
+Link1.appendChild(textNodes[6]);
+
+ 
+
+Link2.href  = 'http://fr.wikipedia.org/wiki/World_Wide_Web';
+Link2.title = 'World Wide Web';
+Link2.appendChild(textNodes[8]);
+
+// Insertion du contenu de <h1> dans Div1.
+
+Div1.appendChild(Header);
+
+// Insertion du contenu dans Div2.
+
+Div2.appendChild(textNodes[1]);
+Div2.appendChild(Strong1);
+Div2.appendChild(textNodes[3]);
+Div2.appendChild(Strong2);
+Div2.appendChild(textNodes[5]);
+Div2.appendChild(Link1);
+Div2.appendChild(textNodes[7]);
+Div2.appendChild(Link2);
+Div2.appendChild(textNodes[9]);
+
+// Insertion des 2 <div> dans le <body>
+
+document.body.appendChild(Div1);
+document.body.appendChild(Div2);
+	</script>
+	</body>
+	</html>	
